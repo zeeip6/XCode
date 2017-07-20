@@ -30,7 +30,13 @@ class UITestDemoUITests: XCTestCase {
     
     func testExample() {
         // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        
+        XCTAssertEqual(app.tables.count, 1)
+        XCTAssertEqual(app.buttons.count, 1)
+        let table = app.tables.element(boundBy: 0)
+        XCTAssertEqual(table.cells.count, 0)
     }
     
 }
